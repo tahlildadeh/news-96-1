@@ -10,6 +10,11 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::post('article/{article}/comment', ['as' => 'article.comment', 'uses' => 'ArticleController@comment']);
+Route::resource('article', 'ArticleController');
+Route::post('comment/{article}', ['as' => 'comment.create', 'uses' => 'CommentController@create']);
+
+
 Route::get('test', function(){
     /*
     $category = \App\Categery::create([
